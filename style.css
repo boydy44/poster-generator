@@ -6,6 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #e0e0e0;
 }
 
 .main-container {
@@ -15,21 +16,25 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  gap: 20px;
+  padding-bottom: 50px;
 }
 
 input {
   border: 1px #666 solid;
+  background-color: #ffffff;
 }
 
-canvas {
-  image-rendering: pixelated;
-  border: 1px #666 solid;
-  box-shadow: 8px 8px #666;
+textarea {
+  resize: none;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .btn {
   text-decoration: none;
   border: 1px #666 solid;
+  background-color: #ffffff;
   padding: 5px 20px;
   cursor: pointer;
 }
@@ -37,6 +42,14 @@ canvas {
 .btn:hover {
   color: #ffffff;
   background-color: #666;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .form-container {
@@ -48,14 +61,148 @@ canvas {
   margin-top: 50px;
 }
 
-.canvas-container {
+.output {
+  display: none;
+  width: 595px;
+  height: 842px;
+  background-color: #ffffff;
+}
+
+.poster-header-container {
   width: 100%;
-  height: auto;
+  height: 100px;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+}
+
+.logo-container {
+  width: 20%;
+  height: 100%;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  width: auto;
+  height: 100%;
+}
+
+.header-text-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  gap: 20px;
+  gap: 5px;
+  background-color: #f85a0b;
+}
+
+.header-text {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.poster-body-container {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+}
+
+.images-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden;
+}
+
+#missing {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 140px;
+  height: auto;
+  transform: rotate(-10deg);
+}
+
+#imageOneOutput {
+  max-width: 90%;
+  max-height: 45%;
+}
+
+#imageTwoOutput {
+  max-width: 90%;
+  max-height: 45%;
+}
+
+.details-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+  font-size: 1.8rem;
+}
+
+.instructions-container {
+  width: 100%;
+  height: 192px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.instructions-text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.poster-footer-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-text {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.qr-container {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qr {
+  width: auto;
+  height: 100%;
+}
+
+.footer-text-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
+  background-color: #f85a0b;
 }

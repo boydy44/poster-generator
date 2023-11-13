@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>Poster Generator</title>
   </head>
   <body>
     <div class="main-container">
       <div class="form-container">
-        <label for="name">Name</label>
-        <input id="name" type="text" />
-        <label for="location">Location</label>
-        <input id="location" type="text" />
-        <label for="phone">Phone</label>
-        <input id="phone" type="text" />
-        <label for="img">Image</label>
-        <input type="file" id="img" name="img" accept="image/*" />
+        <label for="details">Details</label>
+        <textarea name="details" id="details" cols="30" rows="10"></textarea>
+        <label for="imgOne">Image One</label>
+        <input type="file" id="imgOne" name="imgOne" accept="image/*" />
+        <label for="imgTwo">Image Two</label>
+        <input type="file" id="imgTwo" name="imgTwo" accept="image/*" />
       </div>
-      <div class="canvas-container">
+      <div class="btn-container">
+        <div id="btnPreview" class="btn">Preview</div>
         <div id="btnDownload" class="btn">Download</div>
-        <canvas id="posterCanvas" width="595" height="842"></canvas>
         <a id="download"></a>
       </div>
+      <div id="output" class="output"></div>
     </div>
   </body>
 </html>
