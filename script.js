@@ -4,23 +4,24 @@ let formImgTwo = document.querySelector("#imgTwo");
 let btnDownload = document.querySelector("#btnDownload");
 let btnPreview = document.querySelector("#btnPreview");
 let btnReset = document.querySelector("#btnReset");
-let downloadLink = document.querySelector("#download");
 let posterOutput = document.querySelector("#output");
 let imageOneOutput;
 let imageTwoOutput;
 
 btnDownload.addEventListener("click", function () {
   generateHTML();
-  html2canvas(posterOutput, { allowTaint: true, useCORS: true }).then(function (
-    canvas
-  ) {
-    let imgData = canvas.toDataURL("image/png");
-    downloadLink.href = imgData;
-    downloadLink.download = "poster.png";
-    downloadLink.click();
-  });
+  setTimeout(function () {
+    html2canvas(posterOutput, { allowTaint: true, useCORS: true }).then(
+      function (canvas) {
+        let downloadLink = document.querySelector("#download");
+        let imgData = canvas.toDataURL("image/png");
+        downloadLink.href = imgData;
+        downloadLink.download = "poster.png";
+        downloadLink.click();
+      }
+    );
+  }, 1000);
 });
-
 btnPreview.addEventListener("click", function () {
   generateHTML();
 });
@@ -85,15 +86,22 @@ function generateHTML() {
   posterOutput.innerHTML = posterHTML;
   imageOneOutput = document.querySelector("#imageOneOutput");
   imageTwoOutput = document.querySelector("#imageTwoOutput");
-  let fr1 = new FileReader();
-  fr1.readAsDataURL(formImgOne.files[0]);
-  fr1.onload = function () {
-    imageOneOutput.src = fr1.result;
-  };
-  let fr2 = new FileReader();
-  fr2.readAsDataURL(formImgTwo.files[0]);
-  fr2.onload = function () {
-    imageTwoOutput.src = fr2.result;
-  };
+
+  if (formImgOne.files.length > 0) {
+    let fr1 = new FileReader();
+    fr1.readAsDataURL(formImgOne.files[0]);
+    fr1.onload = function () {
+      imageOneOutput.src = fr1.result;
+    };
+  }
+
+  if (formImgTwo.files.length > 0) {
+    let fr2 = new FileReader();
+    fr2.readAsDataURL(formImgTwo.files[0]);
+    fr2.onload = function () {
+      imageTwoOutput.src = fr2.result;
+    };
+  }
+
   posterOutput.style.display = "block";
 }
