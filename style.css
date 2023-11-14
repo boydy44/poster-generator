@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #e0e0e0;
+  background-color: #f5f5f5;
 }
 
 .main-container {
@@ -23,28 +23,31 @@ body {
 input {
   border: 1px #666 solid;
   background-color: #ffffff;
+  border-radius: 3px;
 }
 
 textarea {
   resize: none;
   font-size: 1rem;
   text-align: center;
+  border-radius: 3px;
 }
 
 .btn {
   text-decoration: none;
-  border: 1px #666 solid;
-  background-color: #ffffff;
+  background-color: rgba(0, 124, 199, 1);
+  color: #f5f5f5;
   padding: 5px 20px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
 .btn:hover {
-  color: #ffffff;
-  background-color: #666;
+  background-color: rgba(0, 124, 199, 0.8);
 }
 
 .btn-container {
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
