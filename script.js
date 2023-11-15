@@ -123,5 +123,7 @@ function generateHTML() {
     imageTwoOutput.style.maxHeight = "45%";
   }
 
-  posterOutput.style.display = "block";
+  if (window.matchMedia("(min-width: 401px)").matches) {
+    posterOutput.style.display = "block";
+  }
 }
