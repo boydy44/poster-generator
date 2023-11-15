@@ -9,6 +9,8 @@ let loadingModalContainer = document.querySelector("#loadingModalContainer");
 let imageOneOutput;
 let imageTwoOutput;
 
+formDetails.value = "Placeholder\nPlaceholder\n\nPlaceholder\n\nPlaceholder";
+
 btnDownload.addEventListener("click", function () {
   loadingModalContainer.style.display = "flex";
   generateHTML();
@@ -44,8 +46,8 @@ function generateHTML() {
   <div class="poster-body-container">
     <div class="images-container">
       <img id="missing" src="missing.png">
-      <img id="imageOneOutput">
-      <img id="imageTwoOutput">
+      <img class="image-output" id="imageOneOutput">
+      <img class="image-output" id="imageTwoOutput">
     </div>
     <div class="details-container">
       ${formDetailsFormatted}
@@ -105,6 +107,19 @@ function generateHTML() {
     fr2.onload = function () {
       imageTwoOutput.src = fr2.result;
     };
+  }
+
+  if (formImgOne.files.length > 0 && formImgTwo.files.length < 1) {
+    imageOneOutput.style.maxHeight = "90%";
+  }
+
+  if (formImgOne.files.length < 1 && formImgTwo.files.length > 0) {
+    imageTwoOutput.style.maxHeight = "90%";
+  }
+
+  if (formImgOne.files.length > 0 && formImgTwo.files.length > 0) {
+    imageOneOutput.style.maxHeight = "45%";
+    imageTwoOutput.style.maxHeight = "45%";
   }
 
   posterOutput.style.display = "block";

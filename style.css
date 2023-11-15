@@ -69,7 +69,6 @@ input {
 textarea {
   resize: none;
   font-size: 1rem;
-  text-align: center;
   border-radius: 3px;
 }
 
@@ -175,14 +174,8 @@ textarea {
   transform: rotate(-10deg);
 }
 
-#imageOneOutput {
+.image-output {
   max-width: 90%;
-  max-height: 45%;
-}
-
-#imageTwoOutput {
-  max-width: 90%;
-  max-height: 45%;
 }
 
 .details-container {
