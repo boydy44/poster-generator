@@ -8,6 +8,7 @@ let posterOutput = document.querySelector("#output");
 let loadingModalContainer = document.querySelector("#loadingModalContainer");
 let imageOneOutput;
 let imageTwoOutput;
+let screenSizeLess400 = window.matchMedia("(max-width: 400px)").matches;
 
 formDetails.value =
   "Date\nBreed\nExtra info\nTown\nFirst letters of postcode\nMobile 1\nMobile 2";
@@ -23,6 +24,9 @@ btnDownload.addEventListener("click", function () {
         downloadLink.href = imgData;
         downloadLink.download = "poster.png";
         downloadLink.click();
+        if (screenSizeLess400) {
+          posterOutput.style.display = "none";
+        }
         loadingModalContainer.style.display = "none";
       }
     );
@@ -123,7 +127,8 @@ function generateHTML() {
     imageTwoOutput.style.maxHeight = "45%";
   }
 
-  if (window.matchMedia("(min-width: 401px)").matches) {
-    posterOutput.style.display = "block";
+  posterOutput.style.display = "block";
+  if (screenSizeLess400) {
+    posterOutput.style.transform = "translateY(1000px)";
   }
 }
