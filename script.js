@@ -9,7 +9,8 @@ let loadingModalContainer = document.querySelector("#loadingModalContainer");
 let imageOneOutput;
 let imageTwoOutput;
 
-formDetails.value = "Placeholder\nPlaceholder\n\nPlaceholder\n\nPlaceholder";
+formDetails.value =
+  "Date\nBreed\nExtra info\nTown\nFirst letters of postcode\nMobile 1\nMobile 2";
 
 btnDownload.addEventListener("click", function () {
   loadingModalContainer.style.display = "flex";
