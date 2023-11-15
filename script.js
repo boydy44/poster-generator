@@ -5,10 +5,12 @@ let btnDownload = document.querySelector("#btnDownload");
 let btnPreview = document.querySelector("#btnPreview");
 let btnReset = document.querySelector("#btnReset");
 let posterOutput = document.querySelector("#output");
+let loadingModalContainer = document.querySelector("#loadingModalContainer");
 let imageOneOutput;
 let imageTwoOutput;
 
 btnDownload.addEventListener("click", function () {
+  loadingModalContainer.style.display = "flex";
   generateHTML();
   setTimeout(function () {
     html2canvas(posterOutput, { allowTaint: true, useCORS: true }).then(
@@ -18,10 +20,12 @@ btnDownload.addEventListener("click", function () {
         downloadLink.href = imgData;
         downloadLink.download = "poster.png";
         downloadLink.click();
+        loadingModalContainer.style.display = "none";
       }
     );
-  }, 1000);
+  }, 1500);
 });
+
 btnPreview.addEventListener("click", function () {
   generateHTML();
 });
